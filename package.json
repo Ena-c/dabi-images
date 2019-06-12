@@ -13,6 +13,10 @@
     "porn",
     "hentai"
   ],
+  "homepage": "https://github.com/Ena-c/dabi-images#readme",
+  "bugs": {
+    "url": "https://github.com/Ena-c/dabi-images/issues"
+  },
   "author": "Ena",
   "license": "ISC",
   "dependencies": {
