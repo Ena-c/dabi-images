@@ -1,6 +1,9 @@
 ﻿
 # dabi-images
-grabs images
+> Pulls images from reddit and danbooru (more will be added in the future)
+> Originally made for a discord bot
+
+[![NPM Version][npm-image]][npm-url]
 
 ### Installation
 ```
@@ -11,20 +14,32 @@ npm install dabi-images
 ```js
 const DabiImages = require("dabi-images");
 const DabiClient = new DabiImages.Client();
-
-// async/await
-(async() => {
-    let data = await DabiClient.nsfw.real.ass();
-    console.log(data);
-    // outputs a json object with image url and source
-})();
-
-// promises
-DabiClient.nsfw.real.ass().then(data => {
-    console.log(data);
-    // outputs a json object with image url and source
+// getting real images
+DabiClient.nsfw.real.ass().then(json => {
+    console.log(json);
+    // outputs data with image url, possible source and other stuff
+}).catch(error => {
+    console.log(error);
+    // outputs error
 });
 
+// getting hentai images
+DabiClient.nsfw.hentai.ass().then(json => {
+    console.log(json);
+    // outputs data with image url, possible source and other stuff
+}).catch(error => {
+    console.log(error);
+    // outputs error
+});
+
+// custom request
+DabiClient.custom.do("https://google.com/", /<meta.*?>/gm).then(matches => {
+    console.log(matches);
+    // outputs an array of all matches
+}).catch(error => {
+    console.log(error);
+    // outputs error
+});
 ```
 ### Real
 
@@ -40,15 +55,30 @@ DabiClient.nsfw.real.ass().then(data => {
 | Tag | Description |
 |:---:|:-----------:|
 | ass | gets ass pictures from danbooru |
+| thighs | gets thighs from danbooru |
+| panties | gets panties from danbooru |
+
+### Custom
+
+| Site | Regex |
+|:----:|:-----:|
+| Provide Url to a website | regex pattern ( ͡° ͜ʖ ͡°) (e.g: /"file-url":".*?"/gm) |
 
 ### Change Log
-* Added hentai with 1 tag ("ass")
-* Added comments to handler.js
-* Added a test file
-* I republished like 5 times because of the stupid readme, versions 2.6.2 - 2.6.6 are the same
+* Added "thighs" to hentai
+* Added "panties" to hentai
+* Added "custom" option for other websites
+* Updated test file
+* Changed a couple things in the code
+
+### Todo
+* Add "random" to hentai
+* Add more sources to hentai and real images (preferably higher quality)
+
 
 ### Support
 ```
-I don't have a github or a website setup; you can contact me through discord
-Username: Ena 𓅓#1328
-User ID: 557016624301867009
+Discord Username: Ena 𓅓#1328
+```
+[npm-image]: https://img.shields.io/npm/v/dabi-images.svg
+[npm-url]: https://www.npmjs.com/package/dabi-images
