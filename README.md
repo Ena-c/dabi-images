@@ -57,6 +57,7 @@ DabiClient.custom.do("https://google.com/", /<meta.*?>/gm).then(matches => {
 | ass | gets ass pictures from danbooru |
 | thighs | gets thighs from danbooru |
 | panties | gets panties from danbooru |
+| feet | gets feet from  danbooru |
 
 ### Custom
 
