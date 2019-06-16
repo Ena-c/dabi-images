@@ -13,7 +13,7 @@ function request(source, site, regex) {
                 case "reddit":
                     if (!site) reject({reason: "No subreddit supplied", message: "Couldn't do request because there wasn't a subreddit"});
                     function ExtractRedditUrl(body, tries) {
-                        if (tries >= 5) reject({reason: "retry limit exceeded", message: "Failed to find a suitable post"});
+                        if (tries >= 10) return reject({reason: "retry limit exceeded", message: "Failed to find a suitable post", subbredit: site});
                         tries++;
                         // grabs a random post
                         let post = body[Math.floor(Math.random() *body.length)].data;
