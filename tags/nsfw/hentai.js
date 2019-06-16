@@ -15,5 +15,10 @@ class HentaiShit {
         url = `https://danbooru.donmai.us/posts?page=${page}&tags=${tags[Math.floor(Math.random() *tags.length)]}`;
         return requestHandler.makeRequest("danbooru", url);
     }
+    feet() {
+        let page = Math.floor(Math.random() *24) +1, tags = ["feet", "toes", "sole", "barefoot"],
+        url = `https://danbooru.donmai.us/posts?page=${page}&tags=${tags[Math.floor(Math.random() *tags.length)]}`;
+        return requestHandler.makeRequest("danbooru", url);
+    }
 }
 module.exports = new HentaiShit();
