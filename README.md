@@ -66,11 +66,7 @@ DabiClient.custom.do("https://google.com/", /<meta.*?>/gm).then(matches => {
 | Provide Url to a website | regex pattern ( ͡° ͜ʖ ͡°) (e.g: /"file-url":".*?"/gm) |
 
 ### Change Log
-* Added "thighs" to hentai
-* Added "panties" to hentai
-* Added "custom" option for other websites
-* Updated test file
-* Changed a couple things in the code
+* Added "feet" to hentai
 
 ### Todo
 * Add "random" to hentai
