@@ -50,6 +50,13 @@ const index = require("./index"), client = new index.Client();
     } catch (err) {
         console.log(func, err);
     }
+    func = "client.nsfw.hentai.feet() =>";
+    try {
+        let data = await client.nsfw.hentai.feet();
+        console.log(func, data);
+    } catch (err) {
+        console.log(func, err);
+    }
     func = "client.custom.do(\"https://google.com/\", /<meta.*?>/gm) =>";
     try {
         let data = await client.custom.do("https://google.com/", /<meta.*?>/gm);
