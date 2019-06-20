@@ -54,7 +54,7 @@ DabiClient.custom.do("https://google.com/", /<meta.*?>/gm).then(matches => {
 
 | Tag | Description |
 |:---:|:-----------:|
-| ass | gets ass pictures from danbooru |
+| ass | gets ass pictures from sites|
 | thighs | gets thighs from danbooru |
 | panties | gets panties from danbooru |
 | feet | gets feet from  danbooru |
@@ -66,9 +66,10 @@ DabiClient.custom.do("https://google.com/", /<meta.*?>/gm).then(matches => {
 | Provide Url to a website | regex pattern ( ͡° ͜ʖ ͡°) (e.g: /"file-url":".*?"/gm) |
 
 ### Change Log
-* Added "feet" to hentai
+* Added "gelbooru" to hentai's "ass" source
 
 ### Todo
+* Add "gelbooru" to the rest of hentai sources
 * Add "random" to hentai
 * Add more sources to hentai and real images (preferably higher quality)
 
