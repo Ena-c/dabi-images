@@ -1,8 +1,17 @@
 const requestHandler = require("../handler");
+function getGelPage() {
+    let count = Math.floor(Math.random() *10), page = (count === 0) ? 0 : 42 * count;
+    return page;
+}
 class HentaiShit {
     ass() {
-        let page = Math.floor(Math.random() *24) +1, url = `https://danbooru.donmai.us/posts?page=${page}&tags=ass+panties`;
-        return requestHandler.makeRequest("danbooru", url);
+        let page = Math.floor(Math.random() *24) +1;
+        let urls = [
+            {url: `https://danbooru.donmai.us/posts?page=${page}&tags=ass+panties`, source: "danbooru"}, 
+            {url: `https://gelbooru.com/index.php?page=post&s=list&tags=ass+uncensored&pid=${getGelPage()}`, source: "gelbooru"}
+        ];
+        let data = urls[Math.floor(Math.random() *urls.length)];
+        return requestHandler.makeRequest(data.source, data.url);
     }
     thighs() {
         let page = Math.floor(Math.random() *24) +1, tags = ["thighs", "thighhighs", "black_legwear"], 
